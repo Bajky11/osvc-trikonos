@@ -1,0 +1,12 @@
+.hero-art--prints { overflow: hidden; }
+.hero-design-scene {
+  position: absolute;
+  pointer-events: none;
+  max-width: none;
+  mix-blend-mode: multiply;
+}
+.hero-design-layer { opacity: 0; transition: opacity 850ms ease-in-out; }
+.hero-design-layer.is-visible { opacity: .94; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-design-layer { transition: none; }
+}

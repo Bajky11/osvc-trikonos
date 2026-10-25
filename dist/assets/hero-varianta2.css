@@ -1,0 +1,34 @@
+/* A separate text column keeps the full-colour illustration free of overlays. */
+.variant-two .site-header { background: var(--paper); }
+.variant-two .hero-art {
+  inset: 100px 0 0 46%;
+  background-image: url('../varianta2.png');
+  background-position: 62% center;
+}
+.variant-two .hero-inner { padding-bottom: 40px; }
+.variant-two .hero-copy { width: 43%; }
+.variant-two .hero h1 { font-size: clamp(48px, 4.8vw, 74px); }
+.variant-two .hero-lead { font-size: 19px; max-width: 410px; }
+.variant-two .hero-desktop-break { display: none; }
+@media (min-width: 701px) and (max-width: 1000px) {
+  .variant-two .hero-art { top: 82px; left: 48%; }
+  .variant-two .hero-copy { width: 45%; }
+  .variant-two .hero h1 { font-size: clamp(40px, 5.2vw, 52px); }
+  .variant-two .hero-lead { font-size: 18px; }
+}
+@media (max-width: 700px) {
+  .variant-two .hero-inner { padding-bottom: 30px; }
+  .variant-two .hero-copy { width: 100%; }
+  .variant-two .hero h1 { font-size: clamp(40px, 10vw, 62px); }
+  .variant-two .hero-lead { font-size: 17px; max-width: 340px; }
+  .variant-two .hero-art {
+    position: relative;
+    inset: auto;
+    height: auto;
+    aspect-ratio: 1672 / 941;
+    background-size: cover;
+    background-position: center;
+  }
+  .variant-two .hero { display: flex; flex-direction: column; }
+  .variant-two .hero-inner { order: -1; }
+}

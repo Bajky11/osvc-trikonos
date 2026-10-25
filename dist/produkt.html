@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="cs" class="catalog-page">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f6f3ea">
+<meta name="description" content="Detail trička Trikonoš. Prohlédněte si motiv, vyberte velikost a počet kusů.">
+<title>Detail trička — Trikonoš</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/shop.css">
+<link rel="stylesheet" href="assets/catalog.css">
+<link rel="stylesheet" href="assets/product.css">
+<script src="assets/products-trikonos.js" defer></script>
+<script src="assets/shop.js" defer></script>
+<link rel="stylesheet" href="assets/login.css">
+<script src="assets/login.js" defer></script>
+</head>
+<body>
+<header class="site-header is-solid has-ribbon">
+  <nav class="nav shell" aria-label="Hlavní navigace">
+    <a class="brand" href="index.html#domu" aria-label="Trikonoš, úvodní stránka">Trikonoš</a>
+    <button class="menu-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html#nase-prace">Naše práce</a><a href="index.html#sezona">Sezóna</a><a href="vsechna-tricka.html" class="active" aria-current="location">Naše potisky</a><a href="index.html#vlastni-potisk">Vlastní potisk</a><a href="index.html#faq">FAQ</a><a href="index.html#kontakt">Kontakty</a>
+    </div>
+    <button class="shop-cart" id="shopCart" type="button" aria-label="Košík, počet položek: 0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l1 13H4L5 8Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg><span id="shopCartCount" hidden aria-hidden="true">0</span></button>
+  </nav>
+  <div class="shop-ribbon" role="img" aria-label="Doprava od 2 kusů zdarma. Možnost vrácení do 14 dní. Odolný potisk. Kvalitní bavlněná trička.">
+    <div class="shop-ribbon-track" aria-hidden="true">
+      <div>
+        <span><svg class="shop-notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11v11H3zM14 10h4l3 4v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>Doprava od 2 kusů zdarma</span>
+        <span><svg class="shop-notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4 4 9l5 5M4 9h10a6 6 0 0 1 0 12h-3"/></svg>Možnost vrácení do 14 dní</span>
+        <span><svg class="shop-notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></svg>Odolný potisk</span>
+        <span><svg class="shop-notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3-6 4 3 5 3-2v11h8V10l3 2 3-5-6-4a4 4 0 0 1-8 0Z"/></svg>Kvalitní bavlněná trička</span>
+      </div>
+      <div>
+        <span><svg class="shop-notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11v11H3zM14 10h4l3 4v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>Doprava od 2 kusů zdarma</span>
+        <span><svg class="shop-notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4 4 9l5 5M4 9h10a6 6 0 0 1 0 12h-3"/></svg>Možnost vrácení do 14 dní</span>
+        <span><svg class="shop-notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></svg>Odolný potisk</span>
+        <span><svg class="shop-notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3-6 4 3 5 3-2v11h8V10l3 2 3-5-6-4a4 4 0 0 1-8 0Z"/></svg>Kvalitní bavlněná trička</span>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="product-main" id="product-main">
+  <div class="shell">
+    <nav class="catalog-breadcrumbs" aria-label="Drobečková navigace"><a href="index.html">Domů</a><span aria-hidden="true">/</span><a href="vsechna-tricka.html">Všechna trička</a><span aria-hidden="true">/</span><span id="productBreadcrumb" aria-current="page">Detail produktu</span></nav>
+    <div class="product-layout" id="productDetail"></div>
+    <noscript><h1>Detail trička</h1><p>Pro zobrazení produktu a výběr velikosti prosím zapněte JavaScript.</p><a href="vsechna-tricka.html">Zpět na všechna trička →</a></noscript>
+    <section class="product-related" id="productRelatedSection" aria-labelledby="related-title">
+      <div class="product-related-heading"><h2 id="related-title">Další motivy pro tebe</h2><a class="shop-catalog-link" href="vsechna-tricka.html">Všechna trička <span aria-hidden="true">→</span></a></div>
+      <div class="product-related-grid" id="shopRelated"></div>
+    </section>
+  </div>
+</main>
+<footer class="footer shop-footer" id="kontakt">
+  <div class="shell">
+    <div class="shop-footer-head">
+      <div><a href="index.html" class="shop-footer-logo">Trikonoš</a><p>Triko z hor, které má duši.</p></div>
+      <div><h3>Najdi svou cestu</h3><a href="vsechna-tricka.html">Kolekce triček</a><a href="index.html#vlastni-potisk">Vlastní motiv</a><a href="index.html#faq">Časté dotazy</a></div>
+      <div><h3>Ozvi se</h3><a href="mailto:ahoj@trikonos.cz">ahoj@trikonos.cz</a><a href="#product-main">Zpět nahoru ↑</a></div>
+    </div>
+    <div class="shop-footer-bottom"><span>© <span id="shopYear"></span> Trikonoš</span></div>
+  </div>
+</footer>
+<div class="shop-toast" id="shopToast" role="status" aria-live="polite" aria-atomic="true"></div>
+<script>const toggle=document.querySelector('.menu-toggle'),links=document.querySelector('.nav-links');toggle.addEventListener('click',()=>{let open=links.classList.toggle('open');toggle.setAttribute('aria-expanded',open);toggle.setAttribute('aria-label',open?'Zavřít menu':'Otevřít menu')});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');toggle.setAttribute('aria-expanded','false')}));</script>
+</body>
+</html>

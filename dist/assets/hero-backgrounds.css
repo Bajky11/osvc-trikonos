@@ -1,0 +1,9 @@
+/* Loaded only by the main page; keep the separate variant untouched. */
+.hero .hero-art { background-image: url('../background/varianta1.png'); }
+.hero-background-picker { position: absolute; z-index: 2; right: max(36px,calc((100% - 1320px)/2)); bottom: 24px; display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: var(--paper); border: 1px solid #0e584d30; border-radius: 0; color: var(--fir); }
+.hero-background-picker label { font-size: 12px; font-weight: 600; }
+.hero-background-picker select { min-height: 36px; max-width: 180px; padding: 6px 28px 6px 10px; border: 1px solid #0e584d50; border-radius: 0; background: transparent; color: var(--fir); font: inherit; font-size: 13px; cursor: pointer; }
+.hero-background-picker select:focus-visible { outline: 2px solid var(--ochre); outline-offset: 3px; }
+@media (max-width: 700px) {
+  .hero-background-picker { right: 18px; bottom: 18px; gap: 8px; padding: 7px 10px; }
+}

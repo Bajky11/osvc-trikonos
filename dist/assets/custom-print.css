@@ -1,0 +1,144 @@
+.shop-custom { height: calc(100svh - var(--appbar-height) - var(--ribbon-height)); min-height: 0; }
+.shop-custom > .shell { margin-block: 0; align-self: stretch; }
+.shop-custom-body { grid-template-columns: minmax(0,1fr) clamp(320px,30vw,400px); grid-template-rows: minmax(0,1fr); align-items: stretch; }
+.custom-shirt-preview { position: relative; min-width: 0; min-height: 0; background: #fff; }
+.shop-custom-panel { align-self: stretch; width: 100%; aspect-ratio: auto; padding: clamp(16px,2vw,28px); gap: 14px; }
+.shop-custom-panel h3, .custom-garment-field legend { font: 700 12px/1.4 Manrope,sans-serif; letter-spacing: .06em; text-transform: uppercase; margin: 0; }
+.custom-color-controls { display: grid; gap: clamp(12px,2svh,24px); }
+.custom-garment-field { border: 0; padding: 0; margin: 0; min-width: 0; }
+.custom-garment-field legend { margin-bottom: 12px; }
+.custom-garment-options { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 6px; }
+.custom-garment-options label { position: relative; cursor: pointer; }
+.custom-garment-options input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.custom-garment-options span { display: block; padding: 10px 3px; border: 1px solid #252b2840; text-align: center; font-size: 12px; }
+.custom-garment-options input:checked + span { background: var(--fir); border-color: var(--fir); color: var(--paper); }
+.custom-garment-options input:focus-visible + span { outline: 2px solid var(--fir); outline-offset: 3px; }
+.custom-panel-section { border-top: 1px solid #252b2825; padding-top: 14px; min-width: 0; }
+.custom-control-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 14px; }
+.custom-control-heading > span { font-size: 12px; }
+.custom-shirt-art { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+/* An inline SVG filter works without an external CSS mask, including on file://.
+   Multiply retains fabric shading; SourceAlpha keeps the background transparent. */
+.custom-shirt-tint { flood-color: var(--shirt-color, #ffffff); }
+.custom-preview-toolbar { position: absolute; z-index: 1; top: 12px; right: 12px; display: grid; grid-template-columns: 1fr; gap: 6px; }
+.custom-preview-toolbar button { display: flex; align-items: center; justify-content: center; gap: 6px; min-width: 0; padding: 10px 12px; border: 1px solid var(--fir); background: var(--fir); color: #fff; font: inherit; font-size: 12px; line-height: normal; font-weight: 700; cursor: pointer; }
+.custom-preview-toolbar button:hover { background: #102f2a; border-color: #102f2a; }
+.custom-preview-toolbar button[aria-pressed="false"] { background: var(--paper); color: var(--fir); border-color: #0e584d60; }
+.custom-preview-toolbar button[aria-pressed="false"]:hover { background: #e8eee6; border-color: var(--fir); }
+.custom-shirt-preview.controls-hidden .custom-center-toggle { display: none; }
+.custom-preview-toolbar button svg { flex: none; width: 16px; height: 16px; }
+@media (max-width: 1000px) {
+  .custom-preview-toolbar { top: 10px; right: 10px; }
+}
+@media (max-width: 700px) {
+  .custom-preview-toolbar button { padding: 8px 10px; font-size: 10px; }
+  .custom-preview-toolbar button svg { width: 12px; height: 12px; }
+}
+.custom-shirt-preview.center-disabled .custom-print-center { display: none; }
+.custom-shirt-preview.controls-hidden :is(.custom-print-area, .custom-print-center, .custom-design-move, .custom-design-resize, .custom-design-hint) { display: none; }
+.custom-print-center { stroke: var(--ochre); stroke-width: 1; stroke-dasharray: 8 5; vector-effect: non-scaling-stroke; pointer-events: none; }
+.custom-print-area { fill: #0e584d06; stroke: #748b81; stroke-width: 1; stroke-dasharray: 6 5; vector-effect: non-scaling-stroke; pointer-events: none; }
+.custom-design-move { fill: transparent; stroke: var(--fir); stroke-width: 1; vector-effect: non-scaling-stroke; cursor: grab; touch-action: none; }
+.custom-design-move:active { cursor: grabbing; }
+.custom-design-resize { fill: var(--fir); stroke: white; stroke-width: 2; vector-effect: non-scaling-stroke; cursor: nwse-resize; touch-action: none; }
+.custom-design-move:focus-visible, .custom-design-resize:focus-visible { stroke: var(--ochre); stroke-width: 3; outline: none; }
+.custom-design-hint { fill: #51594f; font-size: 24px; pointer-events: none; }
+.custom-color-intro { margin: -10px 0 22px; font-size: 14px; line-height: 1.6; }
+.custom-color-swatches { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); justify-items: center; gap: 12px 8px; margin: 0; }
+.custom-color-swatch { width: 30px; height: 30px; padding: 0; border: 1px solid #252b2840; border-radius: 50%; background: var(--swatch); cursor: pointer; }
+.custom-color-swatch[aria-pressed="true"] { outline: 2px solid var(--fir); outline-offset: 4px; }
+.custom-color-value { font-size: 12px; line-height: 1.6; margin: 16px 0 0; }
+.custom-color-value strong { display: block; }
+.custom-color-note { font-size: 11px; color: #51594f; margin: 10px 0 0; }
+.custom-design-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+.custom-design-actions button { padding: 10px 12px; min-height: 40px; border: 1px solid var(--fir); background: transparent; color: var(--fir); font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+.custom-design-actions button:hover { background: #ffffff50; }
+.custom-design-remove { display: block; width: 100%; min-height: 40px; margin-top: 12px; padding: 10px 12px; border: 1px solid #aa3535; background: #aa3535; color: #fff; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+.custom-design-remove:hover { background: #8d2828; border-color: #8d2828; }
+.custom-design-remove[hidden] { display: none; }
+.custom-design-actions [hidden] { display: none; }
+.custom-design-status { margin: 8px 0 0; font-size: 11px; line-height: 1.4; overflow-wrap: anywhere; }
+.custom-design-dimensions { display: grid; gap: 4px; margin-top: 12px; padding: 12px; background: #ffffff45; }
+.custom-design-dimensions[hidden] { display: none; }
+.custom-design-dimensions > span { font-size: 11px; }
+.custom-design-dimensions strong { font: 700 22px/1.2 Manrope,sans-serif; font-variant-numeric: tabular-nums; color: var(--fir); }
+.custom-design-dimensions small { font-size: 10px; line-height: 1.4; color: #51594f; }
+.shop-custom-panel > a { color: var(--fir); font-weight: 700; }
+.custom-order-form { display: grid; grid-template-columns: minmax(0,1fr) 112px; align-items: end; gap: 12px; margin-top: auto; padding-top: 14px; border-top: 1px solid #252b2825; }
+.custom-size-field > label, .custom-quantity-field > label { display: block; margin-bottom: 8px; font: 700 12px/1.4 Manrope,sans-serif; }
+.custom-size-field select { width: 100%; height: 40px; padding: 8px 10px; border: 1px solid #252b2840; border-radius: 0; background: transparent; color: var(--ink); font: inherit; font-size: 12px; cursor: pointer; }
+.custom-quantity-stepper { display: grid; grid-template-columns: 32px minmax(0,1fr) 32px; min-height: 40px; border: 1px solid #252b2840; }
+.custom-quantity-stepper button { padding: 0; border: 0; background: transparent; color: var(--fir); font: inherit; font-size: 18px; cursor: pointer; }
+.custom-quantity-stepper button:hover { background: #ffffff50; }
+.custom-quantity-stepper input { appearance: textfield; width: 100%; min-width: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: var(--ink); text-align: center; font: inherit; font-size: 12px; }
+.custom-quantity-stepper input::-webkit-inner-spin-button, .custom-quantity-stepper input::-webkit-outer-spin-button { appearance: none; margin: 0; }
+.custom-add-to-cart { display: flex; justify-content: space-between; align-items: center; grid-column: 1 / -1; min-height: 40px; padding: 10px 12px; border: 1px solid var(--fir); background: var(--fir); color: #fff; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+.custom-add-to-cart:hover { background: #102f2a; }
+.custom-cart-price { font-size: 20px; font-weight: 800; white-space: nowrap; }
+.custom-add-to-cart:disabled { opacity: .6; cursor: wait; }
+.custom-order-status { grid-column: 1 / -1; margin: 0; font-size: 11px; line-height: 1.4; }
+.custom-order-status:empty { display: none; }
+.custom-order-form :is(input, select):focus-visible { outline: 2px solid var(--fir); outline-offset: 3px; }
+@media (max-height: 850px) and (min-width: 701px) {
+  .shop-custom-panel { padding: 14px; gap: 10px; }
+  .custom-color-controls { gap: 8px; }
+  .custom-panel-section { padding-top: 8px; }
+  .custom-garment-field legend, .custom-control-heading { margin-bottom: 8px; }
+  .custom-color-swatches { gap: 8px; }
+  .custom-color-swatch { width: 26px; height: 26px; }
+  .custom-design-actions { margin-top: 8px; }
+  .custom-design-dimensions { grid-template-columns: 1fr auto; align-items: center; gap: 4px 8px; padding: 8px; margin-top: 8px; }
+  .custom-design-dimensions > span:first-child { grid-column: 1 / -1; }
+  .custom-design-dimensions strong { font-size: 18px; }
+  .custom-design-remove { margin-top: 8px; }
+  .custom-order-form { gap: 8px; padding-top: 8px; }
+}
+.custom-design-dialog { width: min(760px,calc(100% - 36px)); max-height: 85svh; padding: 24px; border: 1px solid var(--fir); background: var(--paper); color: var(--ink); }
+.custom-design-dialog::backdrop { background: #102f2a99; }
+.custom-design-dialog-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 20px; }
+.custom-design-dialog-heading h2 { margin: 0; font: 700 26px Manrope,sans-serif; }
+.custom-design-dialog-heading button { width: 44px; height: 44px; border: 1px solid var(--fir); background: transparent; cursor: pointer; }
+.custom-design-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(140px,1fr)); gap: 14px; }
+.custom-design-grid button { padding: 12px; aspect-ratio: 1; border: 1px solid #0e584d40; background: #fff; cursor: pointer; }
+.custom-design-grid button[aria-pressed="true"] { border: 3px solid var(--fir); }
+.custom-design-grid img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.custom-design-dialog button:focus-visible { outline: 2px solid var(--ochre); outline-offset: 3px; }
+@media (max-width: 700px) {
+  .shop-custom-body { grid-template-columns: minmax(0,1fr); grid-template-rows: minmax(0,1fr) auto; }
+  .shop-custom-panel { aspect-ratio: auto; padding: 16px; gap: 12px; }
+  .custom-color-controls { grid-template-columns: 1fr 1fr; gap: 10px 16px; }
+  .custom-color-controls > .custom-panel-section:last-of-type { grid-column: 1 / -1; }
+  .custom-color-controls > .custom-panel-section { border-top: 0; padding-top: 0; }
+  .custom-color-controls > .custom-color-note { display: none; }
+  .custom-design-actions { grid-template-columns: 1fr 1fr; margin-top: 8px; }
+  .custom-design-remove { grid-column: 1 / -1; }
+  .custom-design-dimensions { padding: 6px 10px; grid-template-columns: 1fr; }
+  .custom-design-dimensions small { grid-column: 1 / -1; }
+  .custom-garment-options { gap: 4px; }
+  .custom-garment-options span { font-size: 10px; padding: 8px 2px; }
+  .custom-color-swatch { width: 22px; height: 22px; }
+  .custom-color-swatches { gap: 8px 4px; }
+  .custom-control-heading { margin-bottom: 8px; }
+  .custom-color-intro { margin: 0 0 18px; }
+}
+@media (min-width: 701px) and (max-height: 750px) {
+  .shop-custom-panel { padding: 18px; gap: 12px; }
+  .custom-color-controls { gap: 12px; }
+}
+@media (max-height: 650px) {
+  .shop-custom-body { grid-template-columns: minmax(0,1fr) clamp(260px,28vw,340px); grid-template-rows: minmax(0,1fr); }
+  .shop-custom-panel { aspect-ratio: auto; }
+  .custom-color-intro, .custom-color-note { display: none; }
+  .custom-color-swatches { gap: 8px; }
+  .custom-color-swatch { width: 24px; height: 24px; }
+  .custom-color-value { margin-top: 8px; }
+  .custom-design-actions { margin-top: 8px; gap: 5px; }
+  .custom-design-actions button { padding: 6px 8px; min-height: 32px; font-size: 12px; }
+  .custom-design-remove { padding: 6px 8px; min-height: 32px; font-size: 12px; }
+  .custom-design-status { font-size: 10px; }
+  .custom-color-controls { gap: 8px; }
+  .custom-panel-section { padding-top: 8px; }
+  .custom-design-dimensions { margin-top: 6px; padding: 6px; }
+  .custom-design-dimensions small { display: none; }
+  .custom-design-dimensions strong { font-size: 18px; }
+}

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#0e584d">
+  <title>Přehled — Trikonoš admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/admin.css">
+  <script src="assets/admin.js" defer></script>
+  <script src="assets/admin-dictionaries.js" defer></script>
+</head>
+<body>
+  <aside class="admin-sidebar">
+    <a class="admin-brand" href="admin.html">Trikonoš <span>admin</span></a>
+    <nav aria-label="Administrace">
+      <a href="#prehled" aria-current="page">Přehled</a>
+      <a href="#objednavky">Objednávky</a>
+      <a href="#produkty">Produkty</a>
+      <a href="#sezony">Sezóny</a>
+      <a href="#klienti">Klienti</a>
+      <a href="#ciselniky">Číselníky</a>
+    </nav>
+    <a class="admin-back" href="index.html">← Zpět na web</a>
+  </aside>
+  <div class="admin-workspace">
+    <header class="admin-header">
+      <h1 id="admin-title">Přehled</h1>
+      <div class="admin-header-tools">
+        <label class="admin-search"><span class="sr-only">Hledat v objednávkách</span><input id="admin-search" type="search" placeholder="Hledat…"></label>
+        <span class="admin-avatar" aria-label="Trikonoš administrátor">TK</span>
+      </div>
+    </header>
+    <main class="admin-content">
+      <section class="admin-stats" id="admin-stats" aria-label="Souhrn obchodu">
+        <article class="stat-card"><h2>Objednávky dnes</h2><strong>12</strong><p class="positive">+3 oproti včerejšku</p></article>
+        <article class="stat-card"><h2>Tržby dnes</h2><strong>18 940 Kč</strong><p class="positive">+9 %</p></article>
+        <article class="stat-card"><h2>Noví klienti</h2><strong>5</strong><p>tento týden</p></article>
+        <article class="stat-card"><h2>Docházejí skladem</h2><strong>3 produkty</strong><a href="#produkty" class="warning">zkontrolovat</a></article>
+      </section>
+      <section class="admin-panel" id="admin-orders" aria-labelledby="orders-title">
+        <h2 id="orders-title">Poslední objednávky</h2>
+        <div class="admin-table-scroll">
+          <table>
+            <thead><tr><th scope="col">Číslo</th><th scope="col">Zákazník</th><th scope="col">Datum</th><th scope="col" class="amount">Částka</th><th scope="col">Stav</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">#1042</th><td>Jan Novák</td><td class="date">20. 7. 2026</td><td class="amount">1 098 Kč</td><td><span class="status status-new">Nová</span></td></tr>
+              <tr><th scope="row">#1041</th><td>Petra Malá</td><td class="date">19. 7. 2026</td><td class="amount">549 Kč</td><td><span class="status status-processing">Zpracovává se</span></td></tr>
+              <tr><th scope="row">#1040</th><td>Firma Horalka s.r.o.</td><td class="date">18. 7. 2026</td><td class="amount">8 784 Kč</td><td><span class="status status-sent">Odesláno</span></td></tr>
+              <tr><th scope="row">#1039</th><td>Tomáš Kraus</td><td class="date">17. 7. 2026</td><td class="amount">1 647 Kč</td><td><span class="status status-delivered">Doručeno</span></td></tr>
+              <tr><th scope="row">#1038</th><td>Lucie Dvořáková</td><td class="date">16. 7. 2026</td><td class="amount">549 Kč</td><td><span class="status status-cancelled">Zrušeno</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="admin-empty" id="admin-no-results" role="status" hidden>Žádná objednávka neodpovídá hledání.</p>
+      </section>
+      <section id="admin-dictionaries" aria-label="Číselníky" hidden>
+        <div class="dictionary-switcher" role="group" aria-label="Vyberte číselník">
+          <button class="admin-button" type="button" data-dictionary="colors" aria-pressed="true">Barvy</button>
+          <button class="admin-button" type="button" data-dictionary="cuts" aria-pressed="false">Střihy</button>
+          <button class="admin-button" type="button" data-dictionary="clothing" aria-pressed="false">Typy oblečení</button>
+        </div>
+        <div class="admin-panel">
+          <div class="dictionary-heading"><h2 id="dictionary-title">Barvy</h2><button class="admin-button admin-button-primary" id="dictionary-add" type="button">+ Přidat</button></div>
+          <p id="dictionary-message" class="dictionary-message" role="status" aria-live="polite"></p>
+          <div class="admin-table-scroll">
+            <table class="dictionary-table" aria-labelledby="dictionary-title">
+              <thead class="sr-only"><tr><th scope="col">Název</th><th scope="col">Akce</th></tr></thead>
+              <tbody id="dictionary-rows"></tbody>
+            </table>
+          </div>
+          <p class="admin-empty" id="dictionary-empty" hidden>Zatím žádné položky. Klikněte na „+ Přidat“.</p>
+        </div>
+      </section>
+      <section class="admin-panel admin-placeholder" id="admin-seasons" aria-labelledby="admin-seasons-title" hidden>
+        <h2 id="admin-seasons-title">Sezóny do budoucna</h2>
+        <p>Valentýn, Velikonoce, Den matek, Den otců, Den dětí, léto, škola, Halloween, Vánoce, Silvestr.</p>
+      </section>
+      <section class="admin-panel admin-placeholder" id="admin-placeholder" hidden>
+        <h2 id="admin-section-title"></h2>
+        <p>Tuto část administrace připravujeme.</p>
+      </section>
+    </main>
+  </div>
+  <dialog class="dictionary-editor" id="dictionary-editor" aria-labelledby="dictionary-editor-title">
+    <div class="dictionary-dialog-heading">
+      <h2 id="dictionary-editor-title">Přidat položku</h2>
+      <button class="admin-icon-button" id="dictionary-close" type="button" aria-label="Zavřít" title="Zavřít"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    </div>
+    <form id="dictionary-form">
+      <label class="dictionary-name" for="dictionary-name">Název<input id="dictionary-name" name="name" required maxlength="80" autocomplete="off" autofocus></label>
+      <label id="dictionary-color-field" for="dictionary-color">Barva<input id="dictionary-color" name="color" type="color" value="#0e584d"></label>
+      <p id="dictionary-editor-message" class="dictionary-message" role="status" aria-live="polite"></p>
+      <div class="dictionary-form-actions">
+        <button class="admin-button" id="dictionary-cancel" type="button">Zrušit</button>
+        <button class="admin-button admin-button-primary" id="dictionary-save" type="submit">Uložit</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>
